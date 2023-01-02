@@ -10,11 +10,12 @@ func main() {
 	os := runtime.GOOS
 
 	// refactor with switch statement
-	if os == "linux" || os == "darwin" || os == "unix" {
-		fmt.Println("*nix variant")
-	} else if os == "windows" {
+	switch os {
+	case "windows":
 		fmt.Println("Windows")
-	} else {
+	case "linux", "darwin", "unix":
+		fmt.Println("*nix variant")
+	default:
 		fmt.Printf("%s.\n", os)
 	}
 }
