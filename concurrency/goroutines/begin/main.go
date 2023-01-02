@@ -3,6 +3,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 // sum calculates and prints the sum of numbers
@@ -16,8 +17,8 @@ func sum(nums []int) {
 
 func main() {
 	nums := []int{1, 2, 3, 4, 5}
-	sum(nums)
+	go sum(nums)
 
 	// invoke the sum function as a goroutine
-	//
+	time.Sleep(1 * time.Millisecond)
 }
